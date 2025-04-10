@@ -16,19 +16,15 @@ import org.springframework.web.bind.annotation.*;
 @RestController
 @CrossOrigin(origins = "http://localhost:4200")
 @RequestMapping("/api/v1")
-@RequiredArgsConstructor // ✅ This will handle constructor injection
+@RequiredArgsConstructor
 public class UserController {
 
     @Autowired
     private UserService userService;
 
     @Autowired
-    private JWTUtils jwtUtils; // ✅ Remove @Autowired
+    private JWTUtils jwtUtils;
 
-//    @GetMapping(path="/users/test")
-//    public String testing(){
-//        return "Thanura";
-//    }
 
     @GetMapping(value = "/get/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<?> getSelectUser(@PathVariable String id) {

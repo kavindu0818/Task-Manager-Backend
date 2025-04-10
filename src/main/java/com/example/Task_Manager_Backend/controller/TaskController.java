@@ -34,7 +34,7 @@ public class TaskController {
         }
         return ResponseEntity.ok(booking);
     }
-//
+
     @DeleteMapping("/delete/{id}")
     public ResponseEntity<String> deleteTask(@PathVariable String id) {
         try {
@@ -46,7 +46,7 @@ public class TaskController {
                     .body("Error deleting booking: " + ex.getMessage());
         }
     }
-//
+
     @PutMapping(value = "/update/{id}", consumes = "application/json", produces = "application/json")
     public ResponseEntity<?> updateTask(@PathVariable String id, @RequestBody TaskDto taskDto) {
         try {

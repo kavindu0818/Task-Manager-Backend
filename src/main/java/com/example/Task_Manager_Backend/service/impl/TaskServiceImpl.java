@@ -33,7 +33,6 @@ public class TaskServiceImpl implements TaskService {
         if (savedCar == null) {
             throw new RuntimeException("Car not saved");
         }
-
         return mapping.toTaskDTO(savedCar);
     }
 
@@ -53,7 +52,6 @@ public class TaskServiceImpl implements TaskService {
         } else {
             throw new RuntimeException("Car not found");
         }
-
     }
 
     @Override
@@ -66,8 +64,6 @@ public class TaskServiceImpl implements TaskService {
             updatedTask.setTitle(taskDto.getDescription());
             updatedTask.setTitle(taskDto.getStatus());
             updatedTask.setTitle(taskDto.getCreatedAt().toString());
-
-
             TaskEntity savedTask = taskDao.save(updatedTask);
             return mapping.toTaskDTO(savedTask);
         }
