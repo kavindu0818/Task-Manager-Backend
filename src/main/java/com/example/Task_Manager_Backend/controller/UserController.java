@@ -14,7 +14,7 @@ import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@CrossOrigin
+@CrossOrigin(origins = "http://localhost:4200")
 @RequestMapping("/api/v1")
 @RequiredArgsConstructor // ✅ This will handle constructor injection
 public class UserController {
@@ -25,10 +25,10 @@ public class UserController {
     @Autowired
     private JWTUtils jwtUtils; // ✅ Remove @Autowired
 
-    @GetMapping(path="/users/test")
-    public String testing(){
-        return "Thanura";
-    }
+//    @GetMapping(path="/users/test")
+//    public String testing(){
+//        return "Thanura";
+//    }
 
     @GetMapping(value = "/get/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<?> getSelectUser(@PathVariable String id) {
@@ -47,9 +47,9 @@ public class UserController {
     @ResponseStatus(HttpStatus.CREATED)
     @PostMapping(path="/users/save", produces = MediaType.APPLICATION_JSON_VALUE, consumes = MediaType.APPLICATION_JSON_VALUE)
     public UserEntity saveUser(@RequestBody UserEntity user) {
-        System.out.println("user come"+ user.getImage());
         return userService.saveUser(user);
     }
+
 
     @PostMapping(path = "/users/login", consumes = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<String> loginUser(@RequestBody UserEntity loginCredentials) {
