@@ -1,4 +1,4 @@
-package com.example.Task_Manager_Backend.repository;
+package com.example.Task_Manager_Backend.dao;
 
 
 import com.example.Task_Manager_Backend.dto.UserEntity;

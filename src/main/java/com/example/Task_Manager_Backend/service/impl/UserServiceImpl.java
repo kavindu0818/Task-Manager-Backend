@@ -1,6 +1,6 @@
 package com.example.Task_Manager_Backend.service.impl;
 import com.example.Task_Manager_Backend.dto.UserEntity;
-import com.example.Task_Manager_Backend.repository.UserRepository;
+import com.example.Task_Manager_Backend.dao.UserRepository;
 import com.example.Task_Manager_Backend.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
